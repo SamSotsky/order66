@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import FetchComp from './components/FetchComp'
+import People from './view/People'
+import Planet from './view/Planet'
 
 function App() {
+  const Error = ()=>{
+    return (
+      <fieldset>
+        <legend> ERROR, Order 66</legend>
+      </fieldset>
+    )
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <h1> Got dood</h1>
+      <FetchComp />
+
+      <Routes>
+        <Route path="/name/:id" element={<People />}/>
+        <Route path="/planet/:id" element={<Planet />}/>
+        <Route path="*" element={Error}/>
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 
