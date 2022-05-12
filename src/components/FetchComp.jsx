@@ -1,5 +1,4 @@
 import React, { useState} from 'react'
-import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 // form: handleSubmit
@@ -15,6 +14,11 @@ const FetchComp = (props) => {
   const handleSubmit = (e) => {
         e.preventDefault()
         navigate(`/${category}/${id}`)
+  }
+
+  const clearForm =()=>{
+    setId("")
+    setCategory("")
   }
     
     return (

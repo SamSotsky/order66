@@ -13,11 +13,11 @@ function App() {
   }
   return (
     <BrowserRouter>
-      <h1> Got dood</h1>
+      <h1> Order 66 finder!</h1>
       <FetchComp />
 
       <Routes>
-        <Route path="/name/:id" element={<People />}/>
+        <Route path="/people/:id" element={<People />}/>
         <Route path="/planet/:id" element={<Planet />}/>
         <Route path="*" element={Error}/>
       </Routes>
